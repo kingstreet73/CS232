@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-/* example:
- *  char str[10090];
+
+   char str[10090];
    int ch, n = 0;
 
    while ((ch = getchar()) != EOF && n < 1000) {
@@ -10,13 +10,13 @@ int main(int argc, char *argv[]) {
       ++n;
    }
 
-   for (int i = 0; i < n; ++i)
+   for (int i = 0; i < n; ++i){
+      if('a' <= str[i] && str[i] <= 'z'){
+        str[i] += 'A' - 'a';
+      }
+
       putchar(str[i]);
-
-
-   return 0;
-
- */
+   }
 
     return 0;
 }

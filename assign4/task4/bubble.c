@@ -10,6 +10,7 @@
 int main()
 {
   char * Strings[NUM];
+  int s = 0;
 
   printf("Please enter %d strings, one per line:\n", NUM);
 

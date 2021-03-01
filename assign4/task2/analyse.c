@@ -8,7 +8,7 @@
 int main()
 {
   char text[MAX], c;
-  int i;
+  int i=0;
   int lowercase, uppercase, digits, other;
   int length;
   
@@ -16,13 +16,12 @@ int main()
   
   /* Save typed characters in text[]: */
     
-  for (i = 0; i < MAX; i++)
-  {
-    text[i] = getchar();
-    if (text[i] == '\n')
-      break;
-  }
-  length = i;
+  fgets(text, MAX, stdin);
+  
+  length = strlen(text)-1;
+  
+
+  
   
   /* Analyse contents of text[]: */
     
