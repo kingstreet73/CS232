@@ -105,9 +105,9 @@ void slist_traverse(struct slist *l) {
 }
 
 void slist_delete(struct slist *l, char *str){
-struct snode* node = l->front;
+/*struct snode* node = l->front;
     while(node != NULL) {
-        free(node);
+        free(node);*./
         
        
 }
