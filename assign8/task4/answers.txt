@@ -1,0 +1,25 @@
+1.By searching the function name “strcmp” in the assembly text, what instruction calls strcmp?
+      pushl %ebx
+        pushl $password
+        leal -8(%ebp),%eax
+        pushl %eax
+        call strcmp  //<--- the call (everything else is the whole instruction of how to use strcmp)
+        movl %eax,%ebx
+        leal 8(%esp),%esp
+        cmpl $0,%ebx
+        jne .L2
+        xorl %eax,%eax
+        jmp .L1
+.L2:
+.L1:
+        leal -12(%ebp),%esp
+        popl %ebx
+
+2.Where is the password “secret” stored?
+Stored in the bytes in the password: section before .LC0:
+
+
+3.What does leal -8(%ebp),%eax right before call strcmp do?
+It finds the address of the second operand (eax) which is the input, and stores it in in the first operand.
+
+

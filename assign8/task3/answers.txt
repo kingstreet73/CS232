@@ -1,0 +1,26 @@
+1.What instructions evaluate “a>6”?
+        movl $13,-4(%ebp)
+        cmpl $6,-4(%ebp)
+        jle .L2
+        addl $2,-12(%ebp)
+        jmp .L3
+.L2:
+        addl $-2,-12(%ebp)
+.L3:
+     leave
+     ret
+
+2.What happens if we delete the “jmp” instruction?
+
+after a is compared to being > 6, it will add c+2 (if true)
+then jump to the l3 point and end the program by releasing the stack frame and returning a value
+if false it will go to l2 point, and subtract -2 from c, then again jump to l3 which is to end program basically.
+if we delete jmp then the program will never end essentially as that is where the stack release and return is.
+
+3.Can you rewrite the condition with “jg” in place of “jle” without changing semantic of the program? Why or why not?
+
+Not sure if im misinterpreting this, but in terms of the literal code done in c, you will need to change semantics to make assembly display jg or jle appropriately as they mean different things when comparing.
+They both do checks after a cmp but in different ways.
+JG (signed) will jump if it checks the flag is set to be greater
+JLE (signed) will jump if it is less than or equal to. So you will need to change the code to appropriately match the correct flag you want displayed in assembly.
+

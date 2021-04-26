@@ -1,0 +1,18 @@
+1.What instruction is “int a, b, c, d;” converted to? 
+
+subl $16,%esp
+subtract 16 from stack pointer, allocating 16 bytes of space on stack for local variables.
+
+2.Does “int a, b, c, d;” shrink or grow the stack? How many bytes are allocated on stack for a, b, c, and d? Explain them using instruction from question 1.
+
+16 bytes because the source is $16, which is 4 bytes for each int. 
+
+3.What instruction is “b=2;” converted to? How is the address of variable b formed in the instruction?
+
+  movl $2,-8(%ebp)
+  
+
+4.Based on the instructions converted from four assignments, can we claim the declaration order determines the allocation order? For instance, a is declared before b, does it mean a is to be allocated before b on stack? Verify your theory by changing the declaration to “int a, c, b, d;”
+
+It doesn't seem to be dependent on the declaration order from my interpretation. Changing it to a c b d
+doesn't affect the destination operand at all. So no matter when they are declared, they still go to the same location.
