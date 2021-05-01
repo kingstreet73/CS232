@@ -1,0 +1,23 @@
+5
+7
+8
+8 size of char pointer
+1
+
+
+pointer math
+1
+12
+3
+
+double array
+
+Go Pace
+Beat CUNY
+Crash SUNY  
+Enjoy CS232
+
+readOnly and Stack
+
+This is a locust tree
+This is also a locust tree
